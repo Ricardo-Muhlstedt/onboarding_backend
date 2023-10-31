@@ -1,7 +1,7 @@
-import { ApolloServer } from "@apollo/server";
-import { startStandaloneServer } from "@apollo/server/standalone";
+import { ApolloServer } from "apollo-server"
+import { gql } from "apollo-server"
 
-const typeDefs = `#graphql
+const typeDefs = gql`
 
     type Query {
         hello: String
@@ -9,18 +9,16 @@ const typeDefs = `#graphql
 `;
 
 const resolvers = {
-  Query: {
-    hello: () => "Hello world!",
-  },
-};
+    Query : {
+        hello: () => "Hello world!"
+    }
+}
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+    typeDefs,
+    resolvers
 });
 
-const { url } = await startStandaloneServer(server, {
-  listen: { port: 4000 },
+server.listen().then(({ url }) => {
+    console.log(`Server ready at: ${url}`)
 });
-
-console.log(`Server ready at: ${url}`);
