@@ -1,12 +1,22 @@
 {
     "compilerOptions": {
       "rootDirs": ["src"],
+      "baseUrl": "./src",
       "outDir": "dist",
       "lib": ["es2020"],
-      "target": "es2020",
-      "module": "esnext",
-      "moduleResolution": "node",
+      "target": "esnext",
+      "module": "nodenext",
+      "moduleResolution": "NodeNext",
       "esModuleInterop": true,
-      "types": ["node"]
-    }
+      "types": ["node"],
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "isolatedModules": true,
+      "noEmit": false,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "resolveJsonModule": true,
+    },
+    "include": ["./src", "./test"],
+    "exclude": ["node_modules"]
   }
