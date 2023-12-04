@@ -1,6 +1,14 @@
-import { AppDataSource } from "./data-source"
-import { User } from "./entity/User"
+import "reflect-metadata";
+import { ApolloServer } from "apollo-server";
+import { gql } from "apollo-server";
+import { typeDefs } from "type-defs";
+import { resolvers } from "resolvers";
 
-AppDataSource.initialize().then(async () => {
-    console.log("deu certo porra")
-}).catch(error => console.log(error))
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
+
+server.listen().then(({ url }) => {
+  console.log(`Server ready at: ${url}`);
+});
