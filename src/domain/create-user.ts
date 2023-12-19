@@ -18,5 +18,20 @@ export async function createUserUseCase(input: UserInputModel) {
     throw new Error(`This user already exists`);
   }
 
+<<<<<<< HEAD
+=======
+  if (input.password.length < 6) {
+    throw new Error(`The password must be at least 6 characters`);
+  }
+
+  if (!/\d/.test(input.password)) {
+    throw new Error(`The password must contain at least one digit`);
+  }
+
+  if (!/[a-zA-Z]/.test(input.password)) {
+    throw new Error(`The password must contain at least one letter`);
+  }
+
+>>>>>>> 5765998 (adding input validation for password)
   return await userRepository.save(input);
 }
