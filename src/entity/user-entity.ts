@@ -6,10 +6,7 @@ export class UserEntity {
   id: number;
 
   @Column()
-  firstName: string;
-
-  @Column()
-  lastName: string;
+  name: string;
 
   @Column()
   age: number;
