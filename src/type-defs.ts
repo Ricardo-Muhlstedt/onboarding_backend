@@ -22,4 +22,4 @@ export const typeDefs = gql`
   type Mutation {
     createUser(data: UserInput!): User!
   }
-`
+`;

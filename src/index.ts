@@ -1,6 +1,5 @@
 import "reflect-metadata";
 import { ApolloServer } from "apollo-server";
-import { gql } from "apollo-server";
 import { typeDefs } from "type-defs";
 import { resolvers } from "resolvers";
 
