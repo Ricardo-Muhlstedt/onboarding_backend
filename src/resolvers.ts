@@ -2,6 +2,6 @@ import { createUserUseCase } from "domain/create-user";
 
 export const resolvers = {
   Mutation: {
-    createUser: (_, data) => createUserUseCase(data),
+    createUser: (_, args) => createUserUseCase(args.data),
   },
 };

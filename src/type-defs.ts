@@ -2,7 +2,7 @@ import { gql } from "apollo-server";
 
 export const typeDefs = gql`
   type Query {
-    getUser: User!
+    user: User!
   }
 
   input UserInput {
@@ -10,7 +10,6 @@ export const typeDefs = gql`
     email: String!
     password: String!
     birthDate: String!
-    age: Int!
   }
 
   type User {
@@ -18,7 +17,6 @@ export const typeDefs = gql`
     name: String!
     email: Sring!
     birthDate: String!
-    age: Int!
   }
 
   type Mutation {
